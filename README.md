@@ -1,22 +1,30 @@
+
 # kafkaSample
 
+download kafka "https://kafka.apache.org/downloads" and extract it (using 7zip or other app)
 
-create kafka folder in D drive 
+1. create kafka folder in D drive 
 
-download kafka and copy all folder content inside folder  bin,config ect in to c:/kafka folder
+2. download kafka and copy all folder content inside folder  bin,config ect in to D:/kafka folder
 
-create data folder inside C:\kafka\data  and then create 2 folder(broker,zookeeper) on pathlike   C:\kafka\data\broker,C:\kafka\data\zookeeper 
+3. create data folder inside D:\kafka\data  and then create 2 folder(broker,zookeeper) on pathlike   D:\kafka\data\broker,D:\kafka\data\zookeeper 
 
-D:\kafka\config\zookeeper.properties   	   change and give path for dataDir=D:/kafka/data/zookeeper
+4. now open file D:\kafka\config\zookeeper.properties  and change  path for dataDir=D:/kafka/data/zookeeper
 
-D:\kafka\config\server.properties        change and give path for log.dirs=D:/kafka/data/broker 
+5. D:\kafka\config\server.properties    - change and give path for log.dirs=D:/kafka/data/broker 
 
-D:\kafka\bin\windows> zookeeper-server-start.bat ..\..\config\zookeeper.properties    					-start zookeeper
+6. D:\kafka\bin\windows> zookeeper-server-start.bat ..\..\config\zookeeper.properties    					        :-start zookeeper
 
-D:\kafka\bin\windows>kafka-server-start.bat ..\..\config\server.properties  							--start kafka
+7. D:\kafka\bin\windows>kafka-server-start.bat ..\..\config\server.properties  							       : --start kafka
 
-D:\kafka\bin\windows>kafka-topics.bat --create --topic test --bootstrap-server localhost:9092      -create topic in kafka
+8. D:\kafka\bin\windows>kafka-topics.bat --create --topic test --bootstrap-server localhost:9092                                  :-create topic in kafka
 
-now run consumer application and put breakpoint so that you can see data recived
+9. D:\kafka\bin\windows>kafka-topics.bat --list --bootstrap-server localhost:9092           :-get list of topic
 
-run producer application and run producer post call to send data for order in swagger page
+10. D:\kafka\bin\windows>kafka-console-consumer.bat --topic test --bootstrap-server localhost:9092      :-consumer for topic 
+
+11. D:\kafka\bin\windows>kafka-console-producer.bat --topic test --bootstrap-server localhost:9092      :-producer  and now keep on typing message you will get same in consumer
+
+12. now run consumer application and put breakpoint so that you can see data recived
+
+13. run producer application and run producer post call to send data for order in swagger page
